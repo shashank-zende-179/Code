@@ -1,0 +1,53 @@
+PRACTICAL-1
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    string input_string;  // Declare a string variable to store user input
+    
+    // Get user input
+    cout << "Enter a string: ";
+    getline(cin, input_string);  // Using getline to allow spaces in the input string
+    
+    // Iterate through each character in the string
+    for (char ch : input_string) {
+        // Convert character to its ASCII value
+        int ascii_value = static_cast<int>(ch);
+        
+        // Perform AND, OR, and XOR with 127
+        int and_result = ascii_value & 127;
+        int or_result = ascii_value | 127;
+        int xor_result = ascii_value ^ 127;
+        
+        // Display the results
+        cout << "Character: " << ch << endl;
+        cout << "ASCII Value: " << ascii_value << endl;
+        cout << "AND with 127: " << and_result << endl;
+        cout << "OR with 127: " << or_result << endl;
+        cout << "XOR with 127: " << xor_result << endl;
+        cout << "------------------------------" << endl;  // Separator between characters
+    }
+
+    return 0;
+}
+
+
+
+
+output-
+Enter a string: hi
+Character: h
+ASCII Value: 104
+AND with 127: 104
+OR with 127: 127
+XOR with 127: 23
+------------------------------
+Character: i
+ASCII Value: 105
+AND with 127: 105
+OR with 127: 127
+XOR with 127: 22
+------------------------------
